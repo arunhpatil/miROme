@@ -7,9 +7,9 @@ longLabel miRNA expression of primary cells
 bigDataUrl https://raw.githubusercontent.com/arunhpatil/miROme/master/UCSC/miRNA_primary_barchart2.bb
 barChartLabel Tissues
 barChartUnit RPM
-barChartMatrixUrl https://raw.githubusercontent.com/arunhpatil/miROme/master/UCSC/miRNA_primary_RPM_matrix.txt
-barChartSampleUrl https://raw.githubusercontent.com/arunhpatil/miROme/master/UCSC/categoriesFile_primary.txt
+barChartMatrixUrl https://raw.githubusercontent.com/arunhpatil/miROme/UCSC/miRNA_primary_RPM_matrix.txt
+barChartSampleUrl https://raw.githubusercontent.com/arunhpatil/miROme/UCSC/categoriesFile_primary.txt
 visibility pack
 defaultPos chr9:136670616-136670636
-htmlPath https://raw.githubusercontent.com/arunhpatil/miROme/master/UCSC/hg38/primary.html
+htmlPath https://raw.githubusercontent.com/arunhpatil/miROme/UCSC/hg38/primary.html
 priority 1
