@@ -5,7 +5,7 @@ barChartColors #42d4f4 #42d4f4 #42d4f4 #42d4f4 #42d4f4 #42d4f4 #42d4f4 #42d4f4 #
 shortLabel Primary cells 
 longLabel miRNA expression of primary cells
 bigDataUrl https://raw.githubusercontent.com/arunhpatil/miROme/main/UCSC/miRNA_primary_barchart2.bb
-barChartLabel Cells 
+barChartLabel Tissues 
 barChartUnit RPM
 barChartMatrixUrl https://raw.githubusercontent.com/arunhpatil/miROme/main/UCSC/miRNA_primary_RPM_matrix.txt
 barChartSampleUrl https://raw.githubusercontent.com/arunhpatil/miROme/main/UCSC/categoriesFile_primary.txt
