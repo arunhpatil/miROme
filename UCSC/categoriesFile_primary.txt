@@ -22,8 +22,8 @@ SRR3996369	Astrocyte
 SRR5121485	B_cell_germinal_center
 SRR5121486	B_cell_germinal_center
 SRR5121487	B_cell_germinal_center
-SRR1012333	B_lymphycyte
-SRR1012334	B_lymphycyte
+SRR1012333	B_lymphocyte
+SRR1012334	B_lymphocyte
 SRR7585373	Beta_cell
 SRR6433711	Beta_cell_derived
 SRR6433712	Beta_cell_derived
