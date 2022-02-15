@@ -15,4 +15,4 @@ html https://raw.githubusercontent.com/arunhpatil/miROme/main/UCSC/hg38/primary.
 priority 1
 barChartStretchToItem on
 barChartSizeWindows 500 1000
-barChartMaxSize large
+barChartMaxSize small
