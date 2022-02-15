@@ -14,5 +14,3 @@ defaultPos chr9:136670616-136670636
 html https://raw.githubusercontent.com/arunhpatil/miROme/main/UCSC/hg38/primary.html
 priority 1
 barChartStretchToItem on
-barChartSizeWindows 10000 100
-barChartMaxSize small
