@@ -6,16 +6,111 @@
 
 		<h2>Description</h2>
 
-		<p>These tracks are miRNA expression levels of 196 primary cell types. Data was obtained from multiple sources (2,406 samples) corresponding to 175 unique projects. Few of the major sources are from; </p><br>		
-		<ol type="a">
-		  <li><a href="http://genome.cshlp.org/content/early/2017/09/06/gr.222067.117.long" target="_blank">McCall MN et al</a>. cells were generally grown in culture or were flow sorted;</li>
-		  <li><a href="https://www.nature.com/nbt/journal/v35/n9/full/nbt.3947.html" target="_blank">FANTOM5</a> data, which was obtained from commercially purchased primary cell lines grown in culture.</li>
-		  <li><a href="https://academic.oup.com/nar/article/4080663" target="_blank">Juzenas et al</a>. The isolation technique was magnetic activated cell sorting (MACS) from total blood.</li>
-		  <li><a href="https://academic.oup.com/nar/article/4080663" target="_blank">Lorenzi L et al</a>.
-		</ol>
-		    <p>A separate processing step was carried out, although not part of the display, which normalized across the McCall et al. samples via the RUV (Remove Unwanted Variation) process. Please see Process 2 in
-		     the Methods section for more information. This data is not log normalized.</p>
-		    <h2>Display Conventions and Configuration</h2>
+		<p>These tracks are miRNA expression levels of 196 primary cell types. Data was obtained from multiple sources (2,406 samples) corresponding to 175 unique projects. Few of the major sources are from 
+		  <a href="http://genome.cshlp.org/content/early/2017/09/06/gr.222067.117.long" target="_blank">McCall MN. et al</a>., cells were generally grown in culture or were flow sorted;
+		  <a href="https://www.nature.com/nbt/journal/v35/n9/full/nbt.3947.html" target="_blank"> Rie D. D. et al</a>., FANTOM5 data, which was obtained from commercially purchased primary cell lines grown in culture;
+		  <a href="https://academic.oup.com/nar/article/4080663" target="_blank">Juzenas S. et al</a>., the isolation technique was magnetic activated cell sorting (MACS) from total blood;
+		  <a href="https://www.nature.com/articles/s41587-021-00936-1" target="_blank">Lorenzi L. et al</a>., RNA atlas project, RNA of individual cell types was obtained from ScienCell Research Laboratories or isolated from cell types collected at Ghent University Hospital; etc.,
+		 </p>
+		<p>The reads per million (RPM) values obtained from these samples representing respective cell types were used to create the barChart data. The data is not log normalized, althogh not part of the display, several normalization 
+		  methods were tested and "DESeq2 VST", was considered the best among them. More details of data processing can be found in the Methods.</p>
+		<h3> Summary of cell-class used in this analysis</h3>
+		<p>The cell types originated from multiple sources in the body are broadly classified as cell-class, for examples cell types such as retinal pigment, beta cells, colonic epithelial cells etc. are classified under cell-class "Epithelial". 
+		Further Plasma and Platelets are not cell types by itself, however, they are annotated/termed as such for the analysis and data representation. The color code displays the color assigned to each cell type in the box plot and 
+		barChart representations.</p>
+		 <table style="border: 0.1px solid;" align="center">
+		  <tr style="border: 0.1px solid;">
+			<th style="border: 0.1px solid;">Color code</th>
+			<th style="border: 0.1px solid;">Class</th>
+			<th style="border: 0.1px solid;">Number of samples</th>
+			<th style="border: 0.1px solid;">Number of cell types</th>
+		  </tr>
+     	   <tr style="border: 0.1px solid;">
+		  <td style="border: 0.1px solid; background-color: #42d4f4;"></td>
+		  	<td style="border: 0.1px solid;">Immune</td>
+			<td style="border: 0.1px solid; text-align-last: center;">839</td>
+			<td style="border: 0.1px solid; text-align-last: center;">31</td>
+		  </tr>		
+		  <tr style="border: 0.1px solid;">
+			<td style="border: 0.1px solid; background-color: #ffd8b1;"></td>
+		  	<td style="border: 0.1px solid;">Platelet</td>
+			<td style="border: 0.1px solid; text-align-last: center;">25</td>
+			<td style="border: 0.1px solid; text-align-last: center;">1</td>
+		  </tr>	
+		  <tr style="border: 0.1px solid;">
+		 <td style="border: 0.1px solid; background-color: #dcbeff;"></td>
+		  	<td style="border: 0.1px solid;">Plasma</td>
+			<td style="border: 0.1px solid; text-align-last: center;">139</td>
+			<td style="border: 0.1px solid; text-align-last: center;">1</td>
+		  </tr>	
+		  <tr style="border: 0.1px solid;">
+			<td style="border: 0.1px solid; background-color: #e6194B;"></td>
+			<td style="border: 0.1px solid;">RBC</td>
+			<td style="border: 0.1px solid; text-align-last: center;">85</td>
+			<td style="border: 0.1px solid; text-align-last: center;">2</td>
+		  </tr>	
+		   <tr style="border: 0.1px solid;">
+		   <td style="border: 0.1px solid; background-color: #800000;"></td>
+		  	<td style="border: 0.1px solid;">Fibroblast</td>
+			<td style="border: 0.1px solid; text-align-last: center;">121</td>
+			<td style="border: 0.1px solid; text-align-last: center;">32</td>
+		  </tr>	
+		  <tr style="border: 0.1px solid;">
+		  <td style="border: 0.1px solid; background-color: #9A6324;"></td>
+		  	<td style="border: 0.1px solid;">Muscle</td>
+			<td style="border: 0.1px solid; text-align-last: center;">124</td>
+			<td style="border: 0.1px solid; text-align-last: center;">24</td>
+		  </tr>	
+		   <tr style="border: 0.1px solid;">
+		   <td style="border: 0.1px solid; background-color: #808000;"></td>
+			<td style="border: 0.1px solid;">Fat</td>
+			<td style="border: 0.1px solid; text-align-last: center;">19</td>
+			<td style="border: 0.1px solid; text-align-last: center;">3</td>
+		  </tr>		  
+		   <tr style="border: 0.1px solid;">
+		   <td style="border: 0.1px solid; background-color: #469990;"></td>
+			<td style="border: 0.1px solid;">Epithelial</td>
+			<td style="border: 0.1px solid; text-align-last: center;">274</td>
+			<td style="border: 0.1px solid; text-align-last: center;">36</td>
+		  </tr>			  
+		   <tr style="border: 0.1px solid;">
+		   <td style="border: 0.1px solid; background-color: #FFDB58;"></td>
+			<td style="border: 0.1px solid;">Endothelial</td>
+			<td style="border: 0.1px solid; text-align-last: center;">174</td>
+			<td style="border: 0.1px solid; text-align-last: center;">14</td>
+		  </tr>		  
+		   <tr style="border: 0.1px solid;">
+		   <td style="border: 0.1px solid; background-color: #f58231;"></td>
+			<td style="border: 0.1px solid;">Brain</td>
+			<td style="border: 0.1px solid; text-align-last: center;">80</td>
+			<td style="border: 0.1px solid; text-align-last: center;">3</td>
+		  </tr>
+		  <tr style="border: 0.1px solid;">
+		  <td style="border: 0.1px solid; background-color: #000000;"></td>
+		  	<td style="border: 0.1px solid;">Other</td>
+			<td style="border: 0.1px solid; text-align-last: center;">39</td>
+			<td style="border: 0.1px solid; text-align-last: center;">15</td>
+		  </tr>		  		  
+		  <tr style="border: 0.1px solid;">
+			<td style="border: 0.1px solid; background-color: #aaffc3;"></td>
+		  	<td style="border: 0.1px solid;">Sperm</td>
+			<td style="border: 0.1px solid; text-align-last: center;">95</td>
+			<td style="border: 0.1px solid; text-align-last: center;">1</td>
+		  </tr>	
+		<tr style="border: 0.1px solid;">
+			<td style="border: 0.1px solid; background-color: #000075;"></td>
+		  	<td style="border: 0.1px solid;">Stem</td>
+			<td style="border: 0.1px solid; text-align-last: center;">392</td>
+			<td style="border: 0.1px solid; text-align-last: center;">35</td>
+		  </tr>	
+ 		<tr style="border: 0.1px solid;">			 
+			<td style="border: 0.1px solid;"></td>
+		  	<td style="border: 0.1px solid;">Total</td>
+			<td style="border: 0.1px solid; text-align-last: center;">2406</td>
+			<td style="border: 0.1px solid; text-align-last: center;">198</td>
+		  </tr>		 
+		</table>
+		<h2>Display Conventions and Configuration</h2>
 		    	
 		    <p>Samples are color coded, using the GTEx color palate to indicate similar cell types.  Individual cells can be toggled on/off using the "Go to Primary cells updated track controls" tool. The track is best viewed with the Log10(x+1)transform unselected and the view limits
 		    maximum set to 50,000 RPM or similar.
@@ -23,17 +118,15 @@
 
 		    <h2>Methods</h2>
 
-		    <h3>Process 1</h3>
-
-		    Data was obtained from the Sequence Read Archive or from primary cells grown in culture.  Fastq files were processed with <a href="http://atlas.pathology.jhu.edu/baras/miRge.html">miRge</a> for counting miRNAs. miRNAs were normalized to reads per million miRNA reads (RPM).
-
-		    <h3>Process 2</h3>
-		    	
-		    Additional processing was performed with the Remove Unwanted Variation (RUV) method to normalize across samples. The miRNA matrix file with RUV values for each miRNA for the McCall et al data sets can be found here: <a href="https://raw.githubusercontent.com/mhalushka/UCSC_miRNA_barchart/master/hg38/miRNA_primary_RUV_matrix.txt">Primary cells</a> and <a href="https://raw.githubusercontent.com/mhalushka/UCSC_miRNA_barchart/master/hg38/miRNA_cancer_RUV_matrix.txt">Cancer cells</a>. 
-
+		    The data in FASTQ format were downloaded from the NCBI-Sequence Read Archive using fastq-dump or fasterq-dump. The data were processed for quality filter steps and subsequently processed with <a href="https://github.com/mhalushka/miRge3.0">miRge3.0</a> for miRNA annotation 
+			and miRNAs were normalized to reads per million miRNA reads (RPM).
+			
 		    <h3>Notes</h3>
-		    	
-		    For a full description of the method, please see the methods section of the manuscript below (McCall et al 2017).
+		    
+			The data is devoid of any samples corresponding to any of the following scenario: Exosomes, Cancer cells, reads with both end adapters and 5' adapters, reads with barcodes, reads with Unique Molecular Identifiers (UMI) etc. Furthermore, 
+			only data that were sequenced with Illumina sequencing platform was considered for the analysis.
+				
+		    For a full description of the method, please see the methods section of the manuscript below (Patil et al 2022).
 
 		    <p></p>
 		    	
@@ -45,32 +138,31 @@
 
 		    <h2>Credits</h2>
 
-		    <p>Arun H. Patil, Matthew N. McCall, Min-Sik Kim, Mohammed Adil, Yin Lu, Christopher J. Mitchell, Pamela Leal-Rojas, Jinchong Xu, Manoj Kumar, Valina L. Dawson, Ted M. Dawson, 
-		    Alexander S. Baras, Avi Z. Rosenberg, Dan E. Arking, Kathleen H. Burns, Akhilesh Pandey, Marc K. Halushka.</p>
+		    <p>Arun H. Patil, Andrea Baran, Zach Brehm,  Matthew N. McCall,  Marc K. Halushka.</p>
 		    <p>
-		    Arun and Marc thank the FANTOM5 team and the Hemmrich-Stanisak laboratory for making their data available in the public domain and Christopher Lee from the UCSC Genome Browser team for 
-		    excellent technical assistance.
-
-		    </p><p>
-
-		    For inquiries, please contact Marc Halushka at halushka@jhmi.edu
-		    	
+		    Arun and Marc thank the FANTOM5 team and the Hemmrich-Stanisak laboratory for making their data available in the public domain and the UCSC Genome Browser team for excellent technical assistance.
 		    </p>
-		    	
+	            <h2>Contact:</h2>	
+		    <p>
+		    For inquiries, please contact <a href = "mailto: halushka@jhmi.edu">Marc Halushka</a>
+		    </p>
 		    <h2>References</h2>
-
+			<p>
+			1. Arun H. Patil, Andrea Baran, Zach Brehm, Matthew N. McCall, Marc K. Halushka. A curated human cellular microRNAome based on 196 primary cell types. Under revision. 2022. 
+			</p>
 		    <p>
-
-		    1. Matthew N. McCall, Min-Sik Kim, Mohammed Adil, Arun H. Patil, Yin Lu, Christopher J. Mitchell, Pamela Leal-Rojas, Jinchong Xu, Manoj Kumar, Valina L. Dawson, Ted M. Dawson, Alexander S. Baras, Avi Z. Rosenberg, Dan E. Arking, Kathleen H. Burns, Akhilesh Pandey, Marc K. Halushka. Towards the human cellular microRNAome. <a href="http://genome.cshlp.org/content/early/2017/09/06/gr.222067.117.long" target="_blank">Genome Research</a>, 2017.
-
-		    </p><p>
-		    2. Derek de Rie, et al. An integrated expression atlas of miRNAs and their promoters in human and mouse <a href="https://www.nature.com/nbt/journal/v35/n9/full/nbt.3947.html" target="_blank">Nature Biotechnology</a>, 2017.</p>
-		    <p>
-		    3. Simonas Juzenas et al. A comprehensive, cell specific microRNA catalogue of human peripheral blood <a href="https://academic.oup.com/nar/article/4080663" target="_blank">Nucleic Acids Research</a>, 2017.
-		    </p><p>
-		    4. Baras AS, Mitchell CJ, Myers JR, Gupta S, Weng LC, Ashton JM, Cornish TC, Pandey A, Halushka MK. miRge - A Multiplexed Method of Processing Small RNA-Seq Data to Determine MicroRNA Entropy. <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143066" target="_blank">PLoS One</a>. 2015 Nov 16;10(11):e0143066.
-
+			2. Matthew N. McCall, Min-Sik Kim, Mohammed Adil, Arun H. Patil, Yin Lu, Christopher J. Mitchell, Pamela Leal-Rojas, Jinchong Xu, Manoj Kumar, Valina L. Dawson, Ted M. Dawson, Alexander S. Baras, Avi Z. Rosenberg, Dan E. Arking, Kathleen H. Burns, Akhilesh Pandey, Marc K. Halushka. Towards the human cellular microRNAome. <a href="http://genome.cshlp.org/content/early/2017/09/06/gr.222067.117.long" target="_blank">Genome Research</a>, 2017.
 		    </p>
-		    	
+			<p>
+		    3. Derek de Rie, et al. An integrated expression atlas of miRNAs and their promoters in human and mouse <a href="https://www.nature.com/nbt/journal/v35/n9/full/nbt.3947.html" target="_blank">Nature Biotechnology</a>, 2017.</p>
+		    <p>
+		    4. Simonas Juzenas et al. A comprehensive, cell specific microRNA catalogue of human peripheral blood <a href="https://academic.oup.com/nar/article/4080663" target="_blank">Nucleic Acids Research</a>, 2017.
+		    </p>
+			<p>
+		    5. Lucia Lorenzi et al. The RNA Atlas expands the catalog of human non-coding RNAs. <a href="https://www.nature.com/articles/s41587-021-00936-1" target="_blank">Nature biotechnology</a>. 2021.
+			</p>
+			<p>
+		    6. Patil AH, Halushka MK. miRge3.0: a comprehensive microRNA and tRF sequencing analysis pipeline. <a href="https://academic.oup.com/nargab/article/3/3/lqab068/6325159?login=false" target="_blank">NAR Genomics and Bioinformatics</a>. 2021.
+			</p>
 	</body>
 </html>
