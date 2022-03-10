@@ -1,6 +1,6 @@
 hub microRNAome
 shortLabel ABC of cellular microRNAome 
-longLabel Advanced BarChart configuration of cellular microRNAome. Evaluation of >20 billion small RNA-seq reads from 196 primary cell types across 175 main studies.
+longLabel Advanced BarChart configuration of cellular microRNAome. Evaluation of >20 billion small RNA-seq reads from 196 primary cell types (+plasma, +platelets) across 175 main studies.
 genomesFile genomes.txt
 email mhalush1@jhmi.edu
 descriptionUrl https://raw.githubusercontent.com/arunhpatil/miROme/main/UCSC/description.html
