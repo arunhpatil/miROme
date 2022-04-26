@@ -1,4 +1,4 @@
-## Contents 
+## Contents and usage
 
 * Execute each step in the R script `main_UMAP.R` to produce two html file 
  * one displaying `cell class` as legends
