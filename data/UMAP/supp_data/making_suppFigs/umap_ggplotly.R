@@ -91,8 +91,7 @@ umap_ggplotly <- function(metadata, expression_df, filtered_expression_df){
   final_annotated_umap_plot
   p = ggplotly(final_annotated_umap_plot, tooltip = "text")
   p
-  htmlwidgets::saveWidget(as_widget(p), "DESeq_MirGeneDB_Select_miRNAs_042622.html")
-  
+    
   lvls  <- levels(umap_plot_df$refinebio_disease)
   cols  <- setNames(hcl(h=seq(15, 375, length=length(lvls)+1), l=65, c=100),lvls)
   cols[c("Adipocyte","Preadipocyte","Lipocyte","Red_blood_cell")] <- c("#000000","#000000","#000000", "#000000")
