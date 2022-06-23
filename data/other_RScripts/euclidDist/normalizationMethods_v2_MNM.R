@@ -41,6 +41,7 @@ euclidean_measure <- function(gene_counts, CV_fold, tissue_type){
   tissue_type_all=tissue_type
   
   tab_mat_tissue=as.data.frame(table(tissue_type_all))
+  names(tab_mat_tissue)[1] <- "tissue_type_all" # required for R version 4.2.0
   tissue_types=tab_mat_tissue$tissue_type_all
   n_tissues=dim(tab_mat_tissue)[1]
   n_samples=dim(gene_counts_all)[2]
