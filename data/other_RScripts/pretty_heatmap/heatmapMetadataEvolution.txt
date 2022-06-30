@@ -1,0 +1,153 @@
+miRNA	cluster
+hsa-miR-182-5p	A_Bilateria
+hsa-miR-183-5p	A_Bilateria
+hsa-miR-184	A_Bilateria
+hsa-miR-210-3p	A_Bilateria
+hsa-miR-31-5p	A_Bilateria
+hsa-miR-375-3p	A_Bilateria
+hsa-miR-96-5p	A_Bilateria
+hsa-miR-101-3p	B_Vertebrata
+hsa-miR-122-5p	B_Vertebrata
+hsa-miR-126-3p	B_Vertebrata
+hsa-miR-126-5p	B_Vertebrata
+hsa-miR-132-3p	B_Vertebrata
+hsa-miR-138-5p	B_Vertebrata
+hsa-miR-141-3p	B_Vertebrata
+hsa-miR-143-3p	B_Vertebrata
+hsa-miR-144-3p	B_Vertebrata
+hsa-miR-145-5p	B_Vertebrata
+hsa-miR-147b-3p	B_Vertebrata
+hsa-miR-155-5p	B_Vertebrata
+hsa-miR-192-5p/215-5p	B_Vertebrata
+hsa-miR-193a-5p	B_Vertebrata
+hsa-miR-193b-3p	B_Vertebrata
+hsa-miR-194-5p	B_Vertebrata
+hsa-miR-200a-3p	B_Vertebrata
+hsa-miR-200b-3p	B_Vertebrata
+hsa-miR-200c-3p	B_Vertebrata
+hsa-miR-202-5p	B_Vertebrata
+hsa-miR-203a-3p	B_Vertebrata
+hsa-miR-208a-3p	B_Vertebrata
+hsa-miR-208b-3p	B_Vertebrata
+hsa-miR-21-5p	B_Vertebrata
+hsa-miR-212-3p	B_Vertebrata
+hsa-miR-212-5p	B_Vertebrata
+hsa-miR-216a-5p	B_Vertebrata
+hsa-miR-216b-5p	B_Vertebrata
+hsa-miR-22-3p	B_Vertebrata
+hsa-miR-223-3p	B_Vertebrata
+hsa-miR-338-3p	B_Vertebrata
+hsa-miR-365a-3p/365b-3p	B_Vertebrata
+hsa-miR-429	B_Vertebrata
+hsa-miR-451a	B_Vertebrata
+hsa-miR-455-5p	B_Vertebrata
+hsa-miR-499a-5p	B_Vertebrata
+hsa-miR-551a	B_Vertebrata
+hsa-miR-551b-3p	B_Vertebrata
+hsa-miR-1180-3p	C_Catarrhini
+hsa-miR-1185-1-3p/1185-2-3p	C_Catarrhini
+hsa-miR-1283	C_Catarrhini
+hsa-miR-1323	C_Catarrhini
+hsa-miR-3140-3p	C_Catarrhini
+hsa-miR-3145-3p	C_Catarrhini
+hsa-miR-3173-5p	C_Catarrhini
+hsa-miR-3200-3p	C_Catarrhini
+hsa-miR-320a-3p/320b/320c/320d/320e	C_Catarrhini
+hsa-miR-3617-5p	C_Catarrhini
+hsa-miR-3934-5p	C_Catarrhini
+hsa-miR-4677-3p	C_Catarrhini
+hsa-miR-4766-3p	C_Catarrhini
+hsa-miR-498-5p	C_Catarrhini
+hsa-miR-513c-5p	C_Catarrhini
+hsa-miR-514a-3p	C_Catarrhini
+hsa-miR-516b-5p	C_Catarrhini
+hsa-miR-518b	C_Catarrhini
+hsa-miR-518c-3p/518f-3p	C_Catarrhini
+hsa-miR-518d-5p/518f-5p/520c-5p/526a-5p	C_Catarrhini
+hsa-miR-519c-3p	C_Catarrhini
+hsa-miR-520a-3p	C_Catarrhini
+hsa-miR-520b-3p/520c-3p/520f-3p/526b-3p	C_Catarrhini
+hsa-miR-520d-3p	C_Catarrhini
+hsa-miR-522-3p	C_Catarrhini
+hsa-miR-523-3p	C_Catarrhini
+hsa-miR-524-3p	C_Catarrhini
+hsa-miR-524-5p	C_Catarrhini
+hsa-miR-525-5p	C_Catarrhini
+hsa-miR-526b-5p	C_Catarrhini
+hsa-miR-550a-3p	C_Catarrhini
+hsa-miR-576-5p	C_Catarrhini
+hsa-miR-577-5p	C_Catarrhini
+hsa-miR-579-3p	C_Catarrhini
+hsa-miR-584-5p	C_Catarrhini
+hsa-miR-589-5p	C_Catarrhini
+hsa-miR-605-3p	C_Catarrhini
+hsa-miR-624-5p	C_Catarrhini
+hsa-miR-642a-5p	C_Catarrhini
+hsa-miR-651-5p	C_Catarrhini
+hsa-miR-887-3p	C_Catarrhini
+hsa-miR-887-5p	C_Catarrhini
+hsa-miR-888-5p	C_Catarrhini
+hsa-miR-892a	C_Catarrhini
+hsa-miR-934	C_Catarrhini
+hsa-miR-944-3p	C_Catarrhini
+hsa-miR-1252-5p	D_H. sapiens
+hsa-miR-1266-5p	D_H. sapiens
+hsa-miR-1269a-3p	D_H. sapiens
+hsa-miR-1270-5p	D_H. sapiens
+hsa-miR-1276	D_H. sapiens
+hsa-miR-1278	D_H. sapiens
+hsa-miR-1286-3p	D_H. sapiens
+hsa-miR-1287-5p	D_H. sapiens
+hsa-miR-1294-5p	D_H. sapiens
+hsa-miR-1908-5p	D_H. sapiens
+hsa-miR-1914-5p	D_H. sapiens
+hsa-miR-2115-3p	D_H. sapiens
+hsa-miR-2116-3p	D_H. sapiens
+hsa-miR-2116-5p	D_H. sapiens
+hsa-miR-2276-3p	D_H. sapiens
+hsa-miR-2467-5p	D_H. sapiens
+hsa-miR-3126-5p	D_H. sapiens
+hsa-miR-3127-5p	D_H. sapiens
+hsa-miR-3136-5p	D_H. sapiens
+hsa-miR-3138-3p	D_H. sapiens
+hsa-miR-3174	D_H. sapiens
+hsa-miR-3180/3180-3p	D_H. sapiens
+hsa-miR-3187-3p	D_H. sapiens
+hsa-miR-3194-5p	D_H. sapiens
+hsa-miR-3611-3p	D_H. sapiens
+hsa-miR-3619-5p	D_H. sapiens
+hsa-miR-3622a-5p	D_H. sapiens
+hsa-miR-3663-3p	D_H. sapiens
+hsa-miR-3690	D_H. sapiens
+hsa-miR-3909-3p	D_H. sapiens
+hsa-miR-3942-5p	D_H. sapiens
+hsa-miR-3944-3p	D_H. sapiens
+hsa-miR-4661-5p	D_H. sapiens
+hsa-miR-4664-3p	D_H. sapiens
+hsa-miR-509-3p	D_H. sapiens
+hsa-miR-512-3p	D_H. sapiens
+hsa-miR-513a-5p	D_H. sapiens
+hsa-miR-515-3p	D_H. sapiens
+hsa-miR-515-5p	D_H. sapiens
+hsa-miR-516a-5p	D_H. sapiens
+hsa-miR-517a-3p/517b-3p	D_H. sapiens
+hsa-miR-517c-3p	D_H. sapiens
+hsa-miR-518a-3p	D_H. sapiens
+hsa-miR-518a-5p/527-5p	D_H. sapiens
+hsa-miR-518e-5p/519a-5p/519b-5p/519c-5p/522-5p/523-5p	D_H. sapiens
+hsa-miR-519d-3p	D_H. sapiens
+hsa-miR-520e-3p	D_H. sapiens
+hsa-miR-520g-3p/520h	D_H. sapiens
+hsa-miR-552-5p	D_H. sapiens
+hsa-miR-556-3p	D_H. sapiens
+hsa-miR-556-5p	D_H. sapiens
+hsa-miR-5581-3p	D_H. sapiens
+hsa-miR-5586-5p	D_H. sapiens
+hsa-miR-561-5p	D_H. sapiens
+hsa-miR-5683	D_H. sapiens
+hsa-miR-580-3p	D_H. sapiens
+hsa-miR-585-3p	D_H. sapiens
+hsa-miR-616-5p	D_H. sapiens
+hsa-miR-629-5p	D_H. sapiens
+hsa-miR-766-3p	D_H. sapiens
+hsa-miR-7854-3p	D_H. sapiens
