@@ -33,13 +33,32 @@ The SRR_Accessions.txt is a text input file which contains SRR accessions that n
 
 **Step 4**. A python script (`adapter_detect.py`) was created to identify the first 5 rows of let-7a with adaptor sequence across all downloaded files. These were manually identified for which adaptor sequence type was used.  All samples with 4N, 5’ or UMI-based adaptors were excluded as they would not work with the miREC step of miRge3.0. All other adaptor types were identified and adaptor sequence was supplemented into the miRge3.0 parameters for accurate processing of the fastq.gz files. 
 
-Assuming all your downloaded runs  execute the adapter_detect.py script, please 
 Move all the donwloaded folders in a new directory `SRR_folder` <br>
 ```
 mkdir SRR_folder
 mv *.fastq.gz ./SRR_folder
 ```
 
+Execute the python script `adapter_detect.py` script, as shown below:
+`python adapter_detect.py SRR_folder > new_Adapters_nextbatch.txt` <br>
+The python script takes in folder name as input and iterates through all the fastq.gz files and fetches let-7a sequences. The output is redirected to a file called new_Adapters_nextbatch.txt. The output is a tab delimited file with two columns, first column contains the let-7a + adapter sequence and column two is SRR runs.
+```
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036697.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036697.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036697.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036697.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036697.fastq.gz
+CTGGTGAGGTAGTAGGTTGTATAGTTCTGTAGGCAC    SRR2038610.fastq.gz
+CTGGTGAGGTAGTAGGTTGTATAGTTCTGTAGGCAC    SRR2038610.fastq.gz
+CTGGTGAGGTAGTAGGTTGTATAGTTCTGTAGGCAC    SRR2038610.fastq.gz
+CTGGTGAGGTAGTAGGTTGTATAGTTCTGTAGGCAC    SRR2038610.fastq.gz
+CTGGTGAGGTAGTAGGTTGTATAGTTCTGTAGGCAC    SRR2038610.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCCGGGTG    DRR036709.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
+```
 
 ## Citation
 A curated human cellular microRNAome based on 196 primary cell types. GigaScience 2022
