@@ -2,6 +2,7 @@
 
 Here we describe the protocols implemented to gather cellular information and process a large scale expression analysis of cellular miRNA in humans. 
 
+#### Obtaining metadata
 **Step 1**.  Query at NCBI Sequence Read Archive (https://www.ncbi.nlm.nih.gov/sra)<br>
 ```
 ((miRNA[All Fields] OR microRNA[All Fields] OR (small[All Fields] AND RNA[All Fields]) AND ("Homo sapiens"[Organism] OR ("Homo sapiens"[Organism] OR human[All Fields]))) AND "Homo sapiens"[Organism] AND (cluster_public[prop] AND "library layout single"[Properties] AND 1900[MDAT] : 2900[MDAT] NOT "strategy epigenomic"[Filter] NOT "strategy genome"[Filter] NOT "strategy exome"[Filter] AND "filetype fastq"[Properties]))
@@ -9,9 +10,13 @@ Here we describe the protocols implemented to gather cellular information and pr
 Then download metadata through Run Selector as explained [here](https://github.com/NCBI-Hackathons/ncbi-cloud-tutorials/blob/master/SRA%20tutorials/tutorial_SRA_run_selector.md)
 <br>
 <br>
+
+#### Clean the metadata and selecting SRA runs
 **Step 2**. Manually curate the run list (58,117) to positively select samples that appeared to be from human primary cells.
 <br>
 <br>
+
+#### Downloading SRA runs
 **Step 3**. Use fasterq-dump from the [NCBI SRA-toolkit](https://hpc.nih.gov/apps/sratoolkit.html) on each run.  This was performed by using a Python script to create a shell script to sequentially download each to a computer cluster.  The fastq files were converted to fastq.gz using gzip command (as part of the shell script).<br><br>
 Example to download a single file is shown below:<br> 
 > `fasterq-dump -e 40 -t temp DRR041393` <br>
@@ -29,6 +34,7 @@ The SRR_Accessions.txt is a text input file which contains SRR accessions that n
 
 <br>
 
+#### Fetching adapter sequences 
 **Step 4**. A python script (`adapter_detect.py`) was created to identify the first 5 rows of let-7a with adaptor sequence across all downloaded files. These were manually identified for which adaptor sequence type was used.  All samples with 4N, 5’ or UMI-based adaptors were excluded as they would not work with the miREC step of miRge3.0. All other adaptor types were identified and adaptor sequence was supplemented into the miRge3.0 parameters for accurate processing of the fastq.gz files. 
 
 Move all the donwloaded folders in a new directory `SRR_folder` <br>
@@ -59,7 +65,10 @@ TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
 ```
 From the example above, DRR036697 and DRR036709 represent runs with illumina adapters (`TGGAATTCTCGGGT`). However, SRR2038610 has a 4N nucleotide on either ends of let-7a and is therefore not considered in this analysis. 
 
-
+#### Executing miRge3.0 on the SRA runs
+**Step 5**. miRge3.0 was performed on 4,184 runs using this general command: <br>
+`miRge3.0 -s SRAS-file.fastq.gz -a <adapter_sequence> -gff -bam -trf -lib miRge3_Lib -on human -db miRBase -o OutputDir -mEC -ks 20 -ke 20`. <br>
+Generally, 11 runs were within a single miRge3.0 run.
 
 ## Citation
 A curated human cellular microRNAome based on 196 primary cell types. GigaScience 2022
