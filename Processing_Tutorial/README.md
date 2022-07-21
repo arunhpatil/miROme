@@ -60,31 +60,34 @@ Execute the python script `adapter_detect.py` script, as shown below: <br>
 `python adapter_detect.py SRR_folder > new_Adapters_nextbatch.txt` <br>
 The python script takes in a folder name as input and iterates through all of the fastq.gz files and fetches let-7a sequences. The output is redirected to a file called new_Adapters_nextbatch.txt. The output is a tab delimited file with two columns. The first column contains the let-7a + adapter sequence and the second column is SRR runs.
 ```
-TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036697.fastq.gz
-TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036697.fastq.gz
-TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036697.fastq.gz
-TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036697.fastq.gz
-TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036697.fastq.gz
-CTGGTGAGGTAGTAGGTTGTATAGTTCTGTAGGCAC    SRR2038610.fastq.gz
-CTGGTGAGGTAGTAGGTTGTATAGTTCTGTAGGCAC    SRR2038610.fastq.gz
-CTGGTGAGGTAGTAGGTTGTATAGTTCTGTAGGCAC    SRR2038610.fastq.gz
-CTGGTGAGGTAGTAGGTTGTATAGTTCTGTAGGCAC    SRR2038610.fastq.gz
-CTGGTGAGGTAGTAGGTTGTATAGTTCTGTAGGCAC    SRR2038610.fastq.gz
-TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
-TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
-TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
-TGAGGTAGTAGGTTGTATAGTTTGGAATTCCGGGTG    DRR036709.fastq.gz
-TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGTGCCAAGGAACTCCAG     DRR041356.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGTGCCAAGGAACTCCAG     DRR041356.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGTGCCAAGGAACTCCAG     DRR041356.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGTGCCAAGGAACTCCAG     DRR041356.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTTGGAATTCTCGGGTGCCAAGGAACTCCA     DRR041356.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGTGCCAAGGAACTCCAG     DRR041386.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGTGCCAAGGAACTCCAG     DRR041386.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGTGCCAAGGAACTCCAG     DRR041386.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGTGCCAAGGAACTCCAG     DRR041386.fastq.gz
+TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGTGCCAAGGAACTCCAG     DRR041386.fastq.gz
 ```
-From the example above, DRR036697 and DRR036709 represent runs with Illumina adapters (`TGGAATTCTCGGGT`). However, SRR2038610 has a 4N nucleotide adapter on either end of let-7a and is therefore excluded in this analysis. 
+From the example above, DRR041356 and DRR041386 represent runs with Illumina adapters (`TGGAATTCTCGGGTGCCAAGGAACTCCAG`).  From the file new_Adapters_nextbatch.txt, we can see that SRA runs namely SRR3996364, SRR3996365, SRR3996366, SRR3996367, SRR3996368 and SRR3996369 are already trimmed for adapters and all other SRA runs have illumina adapater sequence. 
 
 ### Executing miRge3.0 on the SRA runs
 **Step 5**. miRge3.0 was performed on 4,184 runs using this general command: <br>
 `miRge3.0 -s SRAS-file.fastq.gz -a <adapter_sequence> -gff -bam -trf -lib miRge3_Lib -on human -db miRBase -o OutputDir -mEC -ks 20 -ke 20`. <br>
 Generally, 11 runs were within a single miRge3.0 run. An example run is shown below:<br>
 
+#### Executing miRge3.0 with no adapters (pre-trimmed)
 ```
-miRge3.0 -s SRR2061941.fastq.gz,SRR2061942.fastq.gz,SRR2061943.fastq.gz,SRR2061944.fastq.gz,SRR2061945.fastq.gz,SRR2061946.fastq.gz,SRR2061947.fastq.gz,SRR2061948.fastq.gz,SRR2061949.fastq.gz -a TGGAATTCTCGGGTGCCAAGGAACTCCAG  -gff -bam -trf -lib miRge3_Lib -on human -db mirbase -o epiC_out -mEC -ks 20 -ke 20
+miRge3.0 -s SRR3996364.fastq.gz,SRR3996365.fastq.gz,SRR3996366.fastq.gz,SRR3996367.fastq.gz,SRR3996368.fastq.gz,SRR3996369.fastq.gz -gff -bam -trf -lib miRge3_Lib -on human -db mirbase -o OutputDir -mEC -ks 20 -ke 20
+```
+
+#### Executing miRge3.0 with illumina adapters for the remaining 18 SRA runs 
+```
+miRge3.0 -s DRR041356.fastq.gz,DRR041386.fastq.gz,DRR041393.fastq.gz,DRR041399.fastq.gz,DRR041408.fastq.gz,DRR041422.fastq.gz,DRR041430.fastq.gz,DRR041436.fastq.gz,DRR041443.fastq.gz  -a illumina  -gff -bam -trf -lib miRge3_Lib -on human -db mirbase -o epiC_out -mEC -ks 20 -ke 20
+
+miRge3.0 -s DRR041450.fastq.gz,DRR041470.fastq.gz,DRR041530.fastq.gz,DRR041578.fastq.gz,DRR041592.fastq.gz,DRR041620.fastq.gz,SRR5121485.fastq.gz,SRR5121486.fastq.gz,SRR5121487.fastq.gz -a illumina  -gff -bam -trf -lib miRge3_Lib -on human -db mirbase -o epiC_out -mEC -ks 20 -ke 20
 ```
 
 ## Citation
