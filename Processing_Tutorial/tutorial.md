@@ -15,6 +15,10 @@ Then download metadata through Run Selector as explained [here](https://github.c
 <br>
 <br>
 **Step 3**. Use fasterq-dump from the [NCBI SRA-toolkit](https://hpc.nih.gov/apps/sratoolkit.html) on each run.  This was performed by using a Python script to create a shell script to sequentially download each to a computer cluster.  The fastq files were converted to fastq.gz using gzip command (as part of the shell script).
+Example to download a single file is shown below:
+`fasterq-dump -e 40 -t temp DRR041393`
+where `-e` specifies number of parallel executions and `-t` specifies temporary folder.
+
 
 <br>
 
