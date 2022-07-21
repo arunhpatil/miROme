@@ -11,12 +11,12 @@ Then download metadata through Run Selector as explained [here](https://github.c
 <br>
 <br>
 
-#### Clean the metadata and selecting SRA runs
+### Clean the metadata and selecting SRA runs
 **Step 2**. Manually curate the run list (58,117) to positively select samples that appeared to be from human primary cells.
 <br>
 <br>
 
-#### Downloading SRA runs
+### Downloading SRA runs
 **Step 3**. Use fasterq-dump from the [NCBI SRA-toolkit](https://hpc.nih.gov/apps/sratoolkit.html) on each run.  This was performed by using a Python script to create a shell script to sequentially download each to a computer cluster.  The fastq files were converted to fastq.gz using gzip command (as part of the shell script).<br><br>
 Example to download a single file is shown below:<br> 
 > `fasterq-dump -e 40 -t temp DRR041393` <br>
@@ -34,7 +34,7 @@ The SRR_Accessions.txt is a text input file which contains SRR accessions that n
 
 <br>
 
-#### Fetching adapter sequences 
+### Fetching adapter sequences 
 **Step 4**. A python script (`adapter_detect.py`) was created to identify the first 5 rows of let-7a with adaptor sequence across all downloaded files. These were manually identified for which adaptor sequence type was used.  All samples with 4N, 5’ or UMI-based adaptors were excluded as they would not work with the miREC step of miRge3.0. All other adaptor types were identified and adaptor sequence was supplemented into the miRge3.0 parameters for accurate processing of the fastq.gz files. 
 
 Move all the donwloaded folders in a new directory `SRR_folder` <br>
