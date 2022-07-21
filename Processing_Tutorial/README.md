@@ -50,7 +50,7 @@ reads written   : 2,906,968
 ### Fetching adapter sequences 
 **Step 4**. A python script (`adapter_detect.py`) was created to identify the first 5 rows of let-7a with adaptor sequence across all downloaded files. These were manually identified for which adaptor sequence type was used.  All samples with 4N, 5’, or UMI-based adaptors were excluded as they would not work with the optional miREC step of miRge3.0. All other adaptor types were identified and adaptor sequence was supplemented into the miRge3.0 parameters for accurate processing of the fastq.gz files. 
 
-Move all the downloaded folders in a new directory `SRR_folder`. <br>
+Move all the downloaded files in a new directory `SRR_folder`. <br>
 ```
 mkdir SRR_folder
 mv *.fastq.gz ./SRR_folder
