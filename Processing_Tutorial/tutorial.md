@@ -59,6 +59,9 @@ TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
 TGAGGTAGTAGGTTGTATAGTTTGGAATTCCGGGTG    DRR036709.fastq.gz
 TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
 ```
+From the example above, DRR036697 and DRR036709 represent runs with illumina adapters (`TGGAATTCTCGGGT`). However, SRR2038610 has a 4N nucleotide on either ends of let-7a and is therefore not considered in this analysis. 
+
+
 
 ## Citation
 A curated human cellular microRNAome based on 196 primary cell types. GigaScience 2022
