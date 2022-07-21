@@ -96,7 +96,7 @@ miRge3.0 -s DRR041450.fastq.gz,DRR041470.fastq.gz,DRR041530.fastq.gz,DRR041578.f
 Alternatively, one could create a shell script of all of the planned miRge3.0 execution as shown in `mirge_run.sh` and execute the bash script. 
 `bash mirge_run.sh` <br>
 
-Finally, use the py_scripts to create summay, Counts and RPM files from the output of the previous execution. <br>
+Finally, use the [py_scripts](https://github.com/mhalushka/miROme/tree/main/py_scripts) to create summay, Counts and RPM files from the output of the previous execution. <br>
 `python summary.py OutputDir` # This will create a summary of all SRR Runs in a file called `miRge3.0_summary.txt` <br>
 `python pandas_combine_counts.py OutputDir` # This will create miRNA counts file for all SRR Runs in a file called `combined_counts.csv` <br>
 `python pandas_combine_RPM.py OutputDir` # This will create miRNA counts file for all SRR Runs in a file called `combined_RPM.csv` <br>
