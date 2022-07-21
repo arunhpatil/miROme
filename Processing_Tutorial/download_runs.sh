@@ -1,0 +1,1 @@
+#!/bin/bash#SBATCH --partition=preempt --time=2-00:00:00 --output=h_rundata2.log -c 40 --mem=120Gmodule load sratoolkit/2.9.2
