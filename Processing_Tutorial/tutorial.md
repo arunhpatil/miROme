@@ -19,7 +19,8 @@ Example to download a single file is shown below:<br>
 > `fasterq-dump -e 40 -t temp DRR041393` <br>
 > where `-e` specifies number of parallel executions and `-t` specifies temporary folder. <br>
 <br>
-To download bulk files, you need to run the python script (found [here](https://github.com/mhalushka/miROme/tree/main/Processing_Tutorial)) `createDownload.py` as shown below: 
+To download bulk files, you need to run the python script, `createDownload.py` as shown below: 
+The script, test input and output shell script can be found [here](https://github.com/mhalushka/miROme/tree/main/Processing_Tutorial)
 
 
 <br>
