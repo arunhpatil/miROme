@@ -23,6 +23,11 @@ Example to download a single file is shown below:<br>
 To download bulk files, you need to run the python script, `createDownload.py` as shown below: 
 The script, test input and output shell script can be found [here](https://github.com/mhalushka/miROme/tree/main/Processing_Tutorial/)
 
+> python createDownload.py SRR_Accessions.txt
+> 
+The SRR_Accessions.txt is a text input file which contains SRR accessions that need to be downloaded and an output file `download_runs.sh` is created. This download_runs.sh is a shell script and need to be executed as shown below:
+> bash download_runs.sh
+> Note: The header lines are specific to server used during this project, if this doesnot apply to your work station, please remove them before execution;
 
 <br>
 
