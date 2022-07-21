@@ -1,0 +1,1 @@
+Python scripts which uses Pandas functionality to join result files from different miRge3.0 runs. The usage information is desribed in [Processing_Tutorial](https://github.com/mhalushka/miROme/tree/main/Processing_Tutorial#executing-mirge30-on-the-sra-runs).
