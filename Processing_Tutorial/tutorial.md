@@ -14,11 +14,10 @@ Then download metadata through Run Selector as explained [here](https://github.c
 **Step 2**. Manually curate the run list (58,117) to positively select samples that appeared to be from human primary cells.
 <br>
 <br>
-**Step 3**. Use fasterq-dump from the [NCBI SRA-toolkit](https://hpc.nih.gov/apps/sratoolkit.html) on each run.  This was performed by using a Python script to create a shell script to sequentially download each sample to a computer cluster.  The fastq files were converted to fastq.gz using gzip command (as part of the shell script).
-
+**Step 3**. Use fasterq-dump from the [NCBI SRA-toolkit](https://hpc.nih.gov/apps/sratoolkit.html) on each run.  This was performed by using a Python script to create a shell script to sequentially download each to a computer cluster.  The fastq files were converted to fastq.gz using gzip command (as part of the shell script).
 
 <br>
-<br>
+
 ## Citation
 A curated human cellular microRNAome based on 196 primary cell types. GigaScience 2022
 
