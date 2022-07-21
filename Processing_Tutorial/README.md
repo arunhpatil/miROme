@@ -65,11 +65,16 @@ TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
 ```
 From the example above, DRR036697 and DRR036709 represent runs with illumina adapters (`TGGAATTCTCGGGT`). However, SRR2038610 has a 4N nucleotide on either ends of let-7a and is therefore not considered in this analysis. 
 
-#### Executing miRge3.0 on the SRA runs
+### Executing miRge3.0 on the SRA runs
 **Step 5**. miRge3.0 was performed on 4,184 runs using this general command: <br>
 `miRge3.0 -s SRAS-file.fastq.gz -a <adapter_sequence> -gff -bam -trf -lib miRge3_Lib -on human -db miRBase -o OutputDir -mEC -ks 20 -ke 20`. <br>
 Generally, 11 runs were within a single miRge3.0 run.
 
 ## Citation
 A curated human cellular microRNAome based on 196 primary cell types. GigaScience 2022
+
+## Resources
+1. Arun H Patil, Marc K Halushka. **miRge3.0: a comprehensive microRNA and tRF sequencing analysis pipeline**. [NAR Genomics and Bioinformatics]( <https://academic.oup.com/nargab/article/3/3/lqab068/6325159>). 2021.
+2. NCBI Sequence Read Archive (https://www.ncbi.nlm.nih.gov/sra)
+3. [NCBI SRA-toolkit](https://hpc.nih.gov/apps/sratoolkit.html) 
 
