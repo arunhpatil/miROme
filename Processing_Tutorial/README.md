@@ -41,7 +41,7 @@ reads written   : 3,782,536
 spots read      : 2,906,968
 reads read      : 2,906,968
 reads written   : 2,906,968
-(These messages will continue untill the end of the file, only subset is shown above)
+(These messages will continue until the end of the file, only subset is shown above)
 ```
 > Note: The header lines are specific to the server used during this project, if this does not apply to your work station, please remove them before execution;
 
