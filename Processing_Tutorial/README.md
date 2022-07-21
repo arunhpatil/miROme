@@ -23,13 +23,26 @@ Example to download a single file is shown below:<br>
 > where `-e` specifies number of parallel executions and `-t` specifies the temporary folder. <br>
 <br>
 
-To download bulk files, you need to run the python script, `createDownload.py` as shown below: 
+To download bulk files, you need to run the python script, `createDownload.py` as shown below: <br>
 The script, test input and output shell script can be found [here](https://github.com/mhalushka/miROme/tree/main/Processing_Tutorial/).
 
 > `python createDownload.py SRR_Accessions.txt`
 > 
 The SRR_Accessions.txt is a text input file which contains SRR accessions that need to be downloaded and an output file `download_runs.sh` is created. This download_runs.sh is a shell script and needs to be executed as shown below:
 > `bash download_runs.sh` <br>
+> The output of the command should look as shown below:
+```
+spots read      : 2,301,241
+reads read      : 2,301,241
+reads written   : 2,301,241
+spots read      : 3,782,536
+reads read      : 3,782,536
+reads written   : 3,782,536
+spots read      : 2,906,968
+reads read      : 2,906,968
+reads written   : 2,906,968
+(These messages will continue untill the end of the file, only subset is shown above)
+```
 > Note: The header lines are specific to the server used during this project, if this does not apply to your work station, please remove them before execution;
 
 <br>
