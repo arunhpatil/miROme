@@ -93,6 +93,9 @@ miRge3.0 -s DRR041356.fastq.gz,DRR041386.fastq.gz,DRR041393.fastq.gz,DRR041399.f
 miRge3.0 -s DRR041450.fastq.gz,DRR041470.fastq.gz,DRR041530.fastq.gz,DRR041578.fastq.gz,DRR041592.fastq.gz,DRR041620.fastq.gz,SRR5121485.fastq.gz,SRR5121486.fastq.gz,SRR5121487.fastq.gz -a illumina  -gff -bam -trf -lib miRge3_Lib -on human -db mirbase -o OutputDir -mEC -ks 20 -ke 20
 ```
 
+Alternatively, one could create a shell script of all of the planned miRge3.0 execution as shown in `mirge_run.sh` and execute the bash script. 
+`bash mirge_run.sh`
+
 
 ## Citation
 A curated human cellular microRNAome based on 196 primary cell types. GigaScience 2022
