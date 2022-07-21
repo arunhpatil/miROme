@@ -76,19 +76,23 @@ From the example above, DRR041356 and DRR041386 represent runs with Illumina ada
 ### Executing miRge3.0 on the SRA runs
 **Step 5**. miRge3.0 was performed on 4,184 runs using this general command: <br>
 `miRge3.0 -s SRAS-file.fastq.gz -a <adapter_sequence> -gff -bam -trf -lib miRge3_Lib -on human -db miRBase -o OutputDir -mEC -ks 20 -ke 20`. <br>
-Generally, 11 runs were within a single miRge3.0 run. An example run is shown below:<br>
+Generally, 11 runs were within a single miRge3.0 run. An example run (with and without adapters) is shown below:<br>
 
 #### Executing miRge3.0 with no adapters (pre-trimmed)
 ```
+# To execute miRge3.0, change the directory to SRR_folder (Alternatively, one could provide absolute paths)
+cd SRR_folder 
 miRge3.0 -s SRR3996364.fastq.gz,SRR3996365.fastq.gz,SRR3996366.fastq.gz,SRR3996367.fastq.gz,SRR3996368.fastq.gz,SRR3996369.fastq.gz -gff -bam -trf -lib miRge3_Lib -on human -db mirbase -o OutputDir -mEC -ks 20 -ke 20
 ```
 
 #### Executing miRge3.0 with illumina adapters for the remaining 18 SRA runs 
 ```
+# To execute miRge3.0, change the directory to SRR_folder if not already changed (as shown above) 
 miRge3.0 -s DRR041356.fastq.gz,DRR041386.fastq.gz,DRR041393.fastq.gz,DRR041399.fastq.gz,DRR041408.fastq.gz,DRR041422.fastq.gz,DRR041430.fastq.gz,DRR041436.fastq.gz,DRR041443.fastq.gz  -a illumina  -gff -bam -trf -lib miRge3_Lib -on human -db mirbase -o epiC_out -mEC -ks 20 -ke 20
 
 miRge3.0 -s DRR041450.fastq.gz,DRR041470.fastq.gz,DRR041530.fastq.gz,DRR041578.fastq.gz,DRR041592.fastq.gz,DRR041620.fastq.gz,SRR5121485.fastq.gz,SRR5121486.fastq.gz,SRR5121487.fastq.gz -a illumina  -gff -bam -trf -lib miRge3_Lib -on human -db mirbase -o epiC_out -mEC -ks 20 -ke 20
 ```
+
 
 ## Citation
 A curated human cellular microRNAome based on 196 primary cell types. GigaScience 2022
