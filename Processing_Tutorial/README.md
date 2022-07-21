@@ -7,7 +7,7 @@ Here we describe the protocols implemented to gather cellular information and pr
 ```
 ((miRNA[All Fields] OR microRNA[All Fields] OR (small[All Fields] AND RNA[All Fields]) AND ("Homo sapiens"[Organism] OR ("Homo sapiens"[Organism] OR human[All Fields]))) AND "Homo sapiens"[Organism] AND (cluster_public[prop] AND "library layout single"[Properties] AND 1900[MDAT] : 2900[MDAT] NOT "strategy epigenomic"[Filter] NOT "strategy genome"[Filter] NOT "strategy exome"[Filter] AND "filetype fastq"[Properties]))
 ``` 
-Then download metadata through Run Selector as explained [here](https://github.com/NCBI-Hackathons/ncbi-cloud-tutorials/blob/master/SRA%20tutorials/tutorial_SRA_run_selector.md)
+Then download metadata through Run Selector as explained [here](https://github.com/NCBI-Hackathons/ncbi-cloud-tutorials/blob/master/SRA%20tutorials/tutorial_SRA_run_selector.md).
 <br>
 <br>
 
@@ -17,27 +17,27 @@ Then download metadata through Run Selector as explained [here](https://github.c
 <br>
 
 ### Downloading SRA runs
-**Step 3**. Use fasterq-dump from the [NCBI SRA-toolkit](https://hpc.nih.gov/apps/sratoolkit.html) on each run.  This was performed by using a Python script to create a shell script to sequentially download each to a computer cluster.  The fastq files were converted to fastq.gz using gzip command (as part of the shell script).<br><br>
+**Step 3**. Use fasterq-dump from the [NCBI SRA-toolkit](https://hpc.nih.gov/apps/sratoolkit.html) on each run.  This was performed by using a Python script (`createDownload.py`) to create a shell script to sequentially download each to a computer cluster.  The fastq files were converted to fastq.gz using gzip command (as part of the shell script).<br><br>
 Example to download a single file is shown below:<br> 
 > `fasterq-dump -e 40 -t temp DRR041393` <br>
-> where `-e` specifies number of parallel executions and `-t` specifies temporary folder. <br>
+> where `-e` specifies number of parallel executions and `-t` specifies the temporary folder. <br>
 <br>
 
 To download bulk files, you need to run the python script, `createDownload.py` as shown below: 
-The script, test input and output shell script can be found [here](https://github.com/mhalushka/miROme/tree/main/Processing_Tutorial/)
+The script, test input and output shell script can be found [here](https://github.com/mhalushka/miROme/tree/main/Processing_Tutorial/).
 
 > `python createDownload.py SRR_Accessions.txt`
 > 
-The SRR_Accessions.txt is a text input file which contains SRR accessions that need to be downloaded and an output file `download_runs.sh` is created. This download_runs.sh is a shell script and need to be executed as shown below:
+The SRR_Accessions.txt is a text input file which contains SRR accessions that need to be downloaded and an output file `download_runs.sh` is created. This download_runs.sh is a shell script and needs to be executed as shown below:
 > `bash download_runs.sh` <br>
-> Note: The header lines are specific to server used during this project, if this doesnot apply to your work station, please remove them before execution;
+> Note: The header lines are specific to the server used during this project, if this does not apply to your work station, please remove them before execution;
 
 <br>
 
 ### Fetching adapter sequences 
-**Step 4**. A python script (`adapter_detect.py`) was created to identify the first 5 rows of let-7a with adaptor sequence across all downloaded files. These were manually identified for which adaptor sequence type was used.  All samples with 4N, 5’ or UMI-based adaptors were excluded as they would not work with the miREC step of miRge3.0. All other adaptor types were identified and adaptor sequence was supplemented into the miRge3.0 parameters for accurate processing of the fastq.gz files. 
+**Step 4**. A python script (`adapter_detect.py`) was created to identify the first 5 rows of let-7a with adaptor sequence across all downloaded files. These were manually identified for which adaptor sequence type was used.  All samples with 4N, 5’, or UMI-based adaptors were excluded as they would not work with the optional miREC step of miRge3.0. All other adaptor types were identified and adaptor sequence was supplemented into the miRge3.0 parameters for accurate processing of the fastq.gz files. 
 
-Move all the donwloaded folders in a new directory `SRR_folder` <br>
+Move all the downloaded folders in a new directory `SRR_folder`. <br>
 ```
 mkdir SRR_folder
 mv *.fastq.gz ./SRR_folder
@@ -45,7 +45,7 @@ mv *.fastq.gz ./SRR_folder
 
 Execute the python script `adapter_detect.py` script, as shown below: <br>
 `python adapter_detect.py SRR_folder > new_Adapters_nextbatch.txt` <br>
-The python script takes in folder name as input and iterates through all the fastq.gz files and fetches let-7a sequences. The output is redirected to a file called new_Adapters_nextbatch.txt. The output is a tab delimited file with two columns, first column contains the let-7a + adapter sequence and column two is SRR runs.
+The python script takes in a folder name as input and iterates through all of the fastq.gz files and fetches let-7a sequences. The output is redirected to a file called new_Adapters_nextbatch.txt. The output is a tab delimited file with two columns. The first column contains the let-7a + adapter sequence and the second column is SRR runs.
 ```
 TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036697.fastq.gz
 TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036697.fastq.gz
@@ -63,7 +63,7 @@ TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
 TGAGGTAGTAGGTTGTATAGTTTGGAATTCCGGGTG    DRR036709.fastq.gz
 TGAGGTAGTAGGTTGTATAGTTTGGAATTCTCGGGT    DRR036709.fastq.gz
 ```
-From the example above, DRR036697 and DRR036709 represent runs with illumina adapters (`TGGAATTCTCGGGT`). However, SRR2038610 has a 4N nucleotide on either ends of let-7a and is therefore not considered in this analysis. 
+From the example above, DRR036697 and DRR036709 represent runs with Illumina adapters (`TGGAATTCTCGGGT`). However, SRR2038610 has a 4N nucleotide adapter on either end of let-7a and is therefore excluded in this analysis. 
 
 ### Executing miRge3.0 on the SRA runs
 **Step 5**. miRge3.0 was performed on 4,184 runs using this general command: <br>
