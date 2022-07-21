@@ -39,7 +39,7 @@ mkdir SRR_folder
 mv *.fastq.gz ./SRR_folder
 ```
 
-Execute the python script `adapter_detect.py` script, as shown below:
+Execute the python script `adapter_detect.py` script, as shown below: <br>
 `python adapter_detect.py SRR_folder > new_Adapters_nextbatch.txt` <br>
 The python script takes in folder name as input and iterates through all the fastq.gz files and fetches let-7a sequences. The output is redirected to a file called new_Adapters_nextbatch.txt. The output is a tab delimited file with two columns, first column contains the let-7a + adapter sequence and column two is SRR runs.
 ```
