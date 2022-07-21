@@ -1,3 +1,8 @@
+# The R script will create static and interactive UMAP, to execute this script, please open this in R-Studio and run from top all the way to bottom. 
+# The script was borrowed from https://alexslemonade.github.io/refinebio-examples/03-rnaseq/dimension-reduction_rnaseq_02_umap.html and edited as per the required changes
+# Authors: All authors from this project, published at GigaScience. 
+# Date last changed: 07/21/2022 
+# Change: Added detailed information/description for each function/scripts in this repository miROme.  
 
 umap_ggplotly <- function(metadata, expression_df, filtered_expression_df){
   
@@ -21,7 +26,7 @@ umap_ggplotly <- function(metadata, expression_df, filtered_expression_df){
         Class,
         levels =  req_levels
       ),
-      refinebio_disease = as.factor(CellType) #### Arun what do you want here? replace with in braces!!
+      refinebio_disease = as.factor(CellType) #### what do you want show here? replace with in braces!!
     )
   
   metadata$group2 <- as.factor(metadata$group2)
