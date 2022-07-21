@@ -31,6 +31,16 @@ The SRR_Accessions.txt is a text input file which contains SRR accessions that n
 
 <br>
 
+**Step 4**. A python script (`adapter_detect.py`) was created to identify the first 5 rows of let-7a with adaptor sequence across all downloaded files. These were manually identified for which adaptor sequence type was used.  All samples with 4N, 5’ or UMI-based adaptors were excluded as they would not work with the miREC step of miRge3.0. All other adaptor types were identified and adaptor sequence was supplemented into the miRge3.0 parameters for accurate processing of the fastq.gz files. 
+
+Assuming all your downloaded runs  execute the adapter_detect.py script, please 
+Move all the donwloaded folders in a new directory `SRR_folder` <br>
+```
+mkdir SRR_folder
+mv *.fastq.gz ./SRR_folder
+```
+
+
 ## Citation
 A curated human cellular microRNAome based on 196 primary cell types. GigaScience 2022
 
