@@ -13,5 +13,5 @@ microRNAome, a large scale expression analysis of cellular miRNA in humans.
 
 
 ## Citation
-A curated human cellular microRNAome based on 196 primary cell types. GigaScience 2022
+Patil, A. H., Baran, A., Brehm, Z. P., McCall, M. N., and Halushka, M. K. (2022). A curated human cellular microRNAome based on 196 primary cell types. [GigaScience](https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giac083/6675300). 11, giac083. 
 
