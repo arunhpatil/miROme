@@ -26,8 +26,8 @@ longLabel miRNA expression of cancer cells
 bigDataUrl https://raw.githubusercontent.com/arunhpatil/miROme/main/UCSC/miRNA_cancer_barchart.bb
 barChartLabel Cells 
 barChartUnit RPM
-barChartMatrixUrl https://raw.githubusercontent.com/arunhpatil/miROme/main/UCSC/miRNA_primary_RPM_matrix.txt
-barChartSampleUrl https://raw.githubusercontent.com/arunhpatil/miROme/main/UCSC/categoriesFile_primary.txt
+barChartMatrixUrl https://raw.githubusercontent.com/arunhpatil/miROme/main/UCSC/miRNA_cancer_RPM_matrix.txt
+barChartSampleUrl https://raw.githubusercontent.com/arunhpatil/miROme/main/UCSC/categoriesFile_cancer.txt
 visibility pack
 defaultPos chr9:136670616-136670636
 html https://raw.githubusercontent.com/arunhpatil/miROme/main/UCSC/hg38/primary.html
